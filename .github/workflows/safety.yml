@@ -1,18 +1,25 @@
-name: Poetry
-    on: [push]
-
-  jobs:
-    lint:
-      runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-python@v4
-        - name: Install safety
-            run: pip install safety
-        - name: Run flake8
-            run: - uses: pyupio/safety@2.3.1
-          with:
-            api-key: ${{ secrets.SAFETY_API_KEY }} .
-            
-            
-           
+- name: pyupio/safety
+  # You may pin to the exact commit or the version.
+  # uses: pyupio/safety@663140370f7aacda1da4976082fab10a782a7b89
+  uses: pyupio/safety@2.3.1
+  with:
+    # PyUp.io API key
+    api-key: # optional, default is 
+    # Create a PR if Safety finds any vulnerabilities. Only the `file` scan mode is currently supported - combine with Cron based actions to get automatic notifications of new vulnerabilities.
+    create-pr: # optional, default is 
+    # Create an issue if Safety finds any vulnerabilities. Only the `file` scan mode is currently supported - combine with Cron based actions to get automatic notifications of new vulnerabilities.
+    create-issue: # optional, default is 
+    # Scan mode to use. One of auto / docker / env / file (defaults to auto)
+    scan: # optional, default is auto
+    # Tag or hash of the Docker Image to scan (defaults to autodetecting the last built tagged image)
+    docker-image: # optional, default is 
+    # Path of requirements file to scan (defaults to poetry.lock -> Pipfile.lock -> requirements.txt)
+    requirements: # optional, default is 
+    # By default, Safety will exit with a non-zero exit code if it detects any vulnerabilities. Set this to yes / true to not error out.
+    continue-on-error: # optional, default is 
+    # Output format for returned data. One of screen / text / json / bare (defaults to screen)
+    output-format: # optional, default is screen
+    # [Advanced] Any additional arguments to pass to Safety
+    args: # optional, default is 
+    # 
+    repo-token: # optional, default is 
