@@ -15,6 +15,8 @@ jobs:
     - name: Poetry dependencies
       run: |
         poetry add safety
-        peotry add coverage
+        poetry add coverage
+    - name: Poetry run
+      run: poetry run pytest
 
 
