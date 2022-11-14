@@ -17,6 +17,6 @@ jobs:
         poetry add safety
         poetry add coverage
     - name: Poetry run
-      run: poetry run pytest
+      run: poetry run safety
 
 
