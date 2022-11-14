@@ -17,6 +17,8 @@ jobs:
         poetry add safety
         poetry add coverage
     - name: Poetry run
-      run: poetry run safety
+      run: |
+        poetry run safety
+        poetry run coverage
 
 
