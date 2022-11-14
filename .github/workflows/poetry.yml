@@ -14,5 +14,9 @@ jobs:
           poetry self update
     - name: Poetry init
       run: poetry init
+    - name: Poetry dependencies
+      run: |
+        poetry add safety
+        peotry add coverage
 
 
