@@ -1,0 +1,18 @@
+name: Poetry
+    on: [push]
+
+  jobs:
+    lint:
+      runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-python@v4
+        - name: Install safety
+            run: pip install safety
+        - name: Run flake8
+            run: - uses: pyupio/safety@2.3.1
+          with:
+            api-key: ${{ secrets.SAFETY_API_KEY }} .
+            
+            
+           
