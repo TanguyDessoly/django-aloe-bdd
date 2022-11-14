@@ -2,21 +2,17 @@ name: Poetry
 on: [push]
 
 jobs:
-poetry:
+  poetry:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
-    - name: Install python
-        run: |
-          python -m pip install --upgrade pip
-          pip install flake8 pytest
     - name: Install poetry
-        run: |
+      run: |
           curl -sSL https://install.python-poetry.org | python3 -
           export PATH=$PATH:/.local/share/pypoetry/venv/bin/
           poetry self update
     - name: Poetry init
-        run: poetry init
+      run: poetry init
 
 
