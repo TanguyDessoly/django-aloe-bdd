@@ -10,4 +10,4 @@ jobs:
         - name: Install python
           run: pip install flake8-bandit
         - name: Run flake8-bandit
-          run: python3 -m flake8-bandit .
+          run: bandit -r .
