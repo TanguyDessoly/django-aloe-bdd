@@ -1,5 +1,5 @@
 
-name: Flalk8
+name: Flalk8-ISORT
 on: [push]
 
 jobs:
