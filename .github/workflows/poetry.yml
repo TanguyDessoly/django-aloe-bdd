@@ -12,8 +12,6 @@ jobs:
           curl -sSL https://install.python-poetry.org | python3 -
           export PATH=$PATH:/.local/share/pypoetry/venv/bin/
           poetry self update
-    - name: Poetry init
-      run: poetry init
     - name: Poetry dependencies
       run: |
         poetry add safety
