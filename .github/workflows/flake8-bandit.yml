@@ -2,11 +2,12 @@ name: Flake8 Bandit
 on: [push]
 
 jobs:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-    - name: Install python
-        run: pip install flake8-bandit
-    - name: Run flake8-bandit
-        run: python3 -m flake8-bandit .
+    flake8bandit:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-python@v4
+        - name: Install python
+          run: pip install flake8-bandit
+        - name: Run flake8-bandit
+          run: python3 -m flake8-bandit .
